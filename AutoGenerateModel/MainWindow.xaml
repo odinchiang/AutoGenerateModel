@@ -1,0 +1,59 @@
+﻿<Window x:Class="AutoGenerateModel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoGenerateModel"
+        mc:Ignorable="d"
+        Title="Auto Generate Model" 
+        Height="460" Width="750"
+        ResizeMode="NoResize"
+        FontSize="18" Background="LightSkyBlue" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Server" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="TxtServer" Padding="3" VerticalContentAlignment="Center" Text=".\SQLEXPRESS"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="UID" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="TxtUid" Padding="3" VerticalContentAlignment="Center" Text="Tester"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Password" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <PasswordBox Grid.Row="4" Grid.Column="1" x:Name="TxtPassword" Padding="3" 
+                         VerticalContentAlignment="Center" Password="1234"/>
+            <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+                    x:Name="BtnConnect" Content="Test Connect >>" Height="50" FontSize="20"
+                    Click="BtnConnect_OnClick"/>
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="NameSpace" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <TextBox Grid.Row="8" Grid.Column="1" x:Name="TxtNameSpace" Padding="3" VerticalContentAlignment="Center" Text="Models"/>
+            <Button Grid.Row="10" Grid.Column="0" x:Name="BtnReset" Height="40" Background="LightYellow" Content="Reset" IsEnabled="False" Click="BtnReset_OnClick"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <StackPanel Orientation="Vertical" Margin="10">
+                <ComboBox x:Name="CbxDatabase" Height="30" SelectionChanged="CbxDatabase_SelectionChanged" IsEnabled="False"/>
+                <ListBox x:Name="LbxTable" Margin="0 5 0 0" Height="300" SelectionMode="Extended" FontSize="12" IsEnabled="False"/>
+                <Button x:Name="BtnGenerate" Margin="0 5 0 0" 
+                        Content="Generate" Background="Blue" Foreground="White" Height="50" FontSize="20"
+                        Click="BtnGenerate_OnClick" IsEnabled="False"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
