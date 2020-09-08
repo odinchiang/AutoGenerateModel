@@ -34,6 +34,7 @@ namespace AutoGenerateModel
         {
             typeof(int),
             typeof(short),
+            typeof(byte),
             typeof(long),
             typeof(double),
             typeof(decimal),
